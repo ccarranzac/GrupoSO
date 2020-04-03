@@ -25,7 +25,7 @@ struct dogType
 };
 
 //Generar estructura con todos los datos
-int generateData(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_LONGITUD])
+int generateData(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_LONGITUD], int i)
 {
   struct dogType *dog;
   dog = ap;
@@ -36,7 +36,7 @@ int generateData(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_L
   //Data
   randomNumber = randNum(1731);
   char name[MAXIMA_LONGITUD];
-  strcpy(name, names[randomNumber]);
+  strcpy(name, names[i % 1730]);
 
   char type[MAXIMA_LONGITUD] = "Perro";
 
@@ -45,7 +45,7 @@ int generateData(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_L
 
   randomNumber = randNum(7);
   char breed[MAXIMA_LONGITUD];
-  strcpy(breed, breeds[randomNumber]);
+  strcpy(breed, breeds[i % 6]);
 
   randomNumber = randNum(10);
   float height = (float)randomNumber;
@@ -161,7 +161,7 @@ int escribirDatos(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_
   //Writing all the data needed (10'000'000)
   for(int i = 0; i < cantidad; i++)
   {
-    generateData((void *)ap, names, breeds);
+    generateData((void *)ap, names, breeds, i);
     r = guardar((void *)ap, nombreArchivo);
     printf("i: %d\n", i); //Prueba
     if(r != 0)

@@ -24,6 +24,7 @@ Letra: W, Rango: [880 - 920]
 Letra: X, Rango: [920 - 960]
 Letra: Y, Rango: [960 - 1000]
 Letra: Z, Rango: [1000 - 1040]
+Letras con tildes o caracteres extraños: [1000- 1040]
 1031 Zupo
 1030 Zuko
 1029 Zsa-zsá

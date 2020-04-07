@@ -3,8 +3,8 @@
 #include <time.h>
 #include <string.h>
 #define MAXIMA_LONGITUD 32
-#define NUMERO_DATOS 10e06
-#define NUMERO_NOMBRES 1730
+#define NUMERO_DATOS 10 //10e06
+#define NUMERO_NOMBRES 1717
 #define NUMERO_RAZAS 6
 
 
@@ -24,7 +24,9 @@ struct dogType
   char genero;
 };
 
-//Generar estructura con todos los datos
+/*Generar estructura con todos los datos
+Devuelve: código Hash del nombre
+*/
 int generateData(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_LONGITUD], int i)
 {
   struct dogType *dog;
@@ -36,7 +38,7 @@ int generateData(void *ap, char names[][MAXIMA_LONGITUD], char breeds[][MAXIMA_L
   //Data
   randomNumber = randNum(1731);
   char name[MAXIMA_LONGITUD];
-  strcpy(name, names[i % 1730]);
+  strcpy(name, names[i % (NUMERO_NOMBRES)]);
 
   char type[MAXIMA_LONGITUD] = "Perro";
 

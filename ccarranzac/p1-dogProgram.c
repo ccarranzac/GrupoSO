@@ -188,8 +188,6 @@ int LLenarEstructura(void *ap, char nombre[][Maxlongitud], char raza[][Maxlongit
     }else{ //si n es impar
     	data->sexo='F';
     }
-    //arreglar esto
-   
 
     return 0;
 }
